@@ -3,4 +3,4 @@ base:
 
 
 postgresql:
-  url: 'postgres://lecabdlaexaewj:cd5f23d0bd9d1cfce58b55ebd48aedf7ceeb7949cc869018c065c86fe942d587@localhost:5438/d4fgafbaksfli'
+  url: 'postgres://lecabdlaexaewj:cd5f23d0bd9d1cfce58b55ebd48aedf7ceeb7949cc869018c065c86fe942d587@localhost:5432/d4fgafbaksfli'

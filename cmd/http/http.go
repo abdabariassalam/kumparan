@@ -7,8 +7,8 @@ import (
 	"syscall"
 
 	"github.com/ilyakaznacheev/cleanenv"
-	"gorm.io/gorm"
 	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 
 	"github.com/bariasabda/kumparan/config"
 	"github.com/bariasabda/kumparan/domain/repository"
@@ -25,7 +25,11 @@ func Execute() {
 	}
 
 	// connect postgresql
-	db, err := gorm.Open(postgres.Open(cfg.Postgresql.Url), &gorm.Config{})
+	PostgresqlUrl := os.Getenv("PostgresqlUrl")
+	if PostgresqlUrl == "" {
+		PostgresqlUrl = cfg.Postgresql.Url
+	}
+	db, err := gorm.Open(postgres.Open(PostgresqlUrl), &gorm.Config{})
 	if err != nil {
 		log.Fatalf("Tidak Konek DB Errornya : %s", err)
 	}
